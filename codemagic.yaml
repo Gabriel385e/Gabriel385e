@@ -10,17 +10,17 @@ workflows:
         UNITY_VERSION: 2022.3.22f1
 
     scripts:
-      - name: Install Unity version
+      - name: Install Unity via version-manager
         script: |
-          unity-version-manager install $UNITY_VERSION
+          curl -s https://get.unity-version-manager.com | bash && \
+          uvm install $UNITY_VERSION
 
       - name: Build Unity iOS project
         script: |
-          unity-version-manager exec $UNITY_VERSION -- \
-            unity-editor \
-              -batchmode -nographics -quit \
-              -projectPath . \
-              -executeMethod BuildScript.BuildiOS
+          uvm exec $UNITY_VERSION -- unity-editor \
+            -batchmode -nographics -quit \
+            -projectPath . \
+            -executeMethod BuildScript.BuildiOS
 
       - name: Build IPA with Xcode
         script: |
