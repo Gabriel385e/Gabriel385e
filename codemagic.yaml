@@ -4,12 +4,10 @@ workflows:
     max_build_duration: 60
     environment:
       xcode: latest
+      groups:
+        - Secure   # <-- ПІДКЛЮЧАЄ твою групу з ключами
       vars:
         UNITY_VERSION: 2022.3.60f1
-        APP_STORE_ID: $APP_STORE_ID
-        APP_STORE_API_KEY_ID: $APP_STORE_API_KEY_ID
-        APP_STORE_ISSUER_ID: $APP_STORE_ISSUER_ID
-        APP_STORE_PRIVATE_KEY: $APP_STORE_PRIVATE_KEY
     scripts:
       - name: Build Unity iOS project
         script: |
