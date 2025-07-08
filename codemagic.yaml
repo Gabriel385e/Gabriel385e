@@ -7,7 +7,7 @@ workflows:
       groups:
         - Secure
       vars:
-        UNITY_VERSION: 2022.3.6f1  # <-- правильне місце
+        UNITY_VERSION: 2022.3.22f1
 
     scripts:
       - name: Install Unity version
