@@ -4,6 +4,8 @@ workflows:
     max_build_duration: 60
     environment:
       xcode: latest
+      groups:
+        - Environment variables
       vars:
         UNITY_VERSION: 2022.3.60f1
     scripts:
@@ -29,7 +31,7 @@ workflows:
       - export/*.ipa
     publishing:
       app_store_connect:
-        apple_id: APP_STORE_ID
-        api_key_id: APP_STORE_API_KEY_ID
-        issuer_id: APP_STORE_ISSUER_ID
-        api_private_key: APP_STORE_PRIVATE_KEY
+        apple_id: $APP_STORE_ID
+        api_key_id: $APP_STORE_API_KEY_ID
+        issuer_id: $APP_STORE_ISSUER_ID
+        api_private_key: $APP_STORE_PRIVATE_KEY
