@@ -5,7 +5,7 @@ workflows:
     environment:
       xcode: latest
       groups:
-        - Secure   # <-- ПІДКЛЮЧАЄ твою групу з ключами
+        - Secure
       vars:
         UNITY_VERSION: 2022.3.60f1
     scripts:
