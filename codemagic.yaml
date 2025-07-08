@@ -10,8 +10,7 @@ workflows:
     scripts:
       - name: Activate Unity license
         script: |
-          echo "Activating Unity license..."
-          echo "$CM_SECURE_UNITY_LICENSE" > unity_lic.ulf
+          echo $UNITY_LICENSE | base64 --decode > unity_lic.ulf
           /Applications/Unity/Hub/Editor/2022.3.10f1/Unity.app/Contents/MacOS/Unity \
             -batchmode -nographics -quit \
             -manualLicenseFile unity_lic.ulf
