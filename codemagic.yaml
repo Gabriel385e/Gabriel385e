@@ -6,14 +6,21 @@ workflows:
       xcode: latest
       groups:
         - Secure
-    unity: 2022.3.6f1
+      vars:
+        UNITY_VERSION: 2022.3.6f1  # <-- правильне місце
+
     scripts:
+      - name: Install Unity version
+        script: |
+          unity-version-manager install $UNITY_VERSION
+
       - name: Build Unity iOS project
         script: |
-          unity-editor \
-            -batchmode -nographics -quit \
-            -projectPath . \
-            -executeMethod BuildScript.BuildiOS
+          unity-version-manager exec $UNITY_VERSION -- \
+            unity-editor \
+              -batchmode -nographics -quit \
+              -projectPath . \
+              -executeMethod BuildScript.BuildiOS
 
       - name: Build IPA with Xcode
         script: |
