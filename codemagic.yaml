@@ -34,4 +34,4 @@ workflows:
         apple_id: $APP_STORE_ID
         key_id: $APP_STORE_API_KEY_ID
         issuer_id: $APP_STORE_ISSUER_ID
-        api_private_key: $APP_STORE_PRIVATE_KEY
+        private_key: $APP_STORE_PRIVATE_KEY
