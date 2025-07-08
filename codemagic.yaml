@@ -29,7 +29,7 @@ workflows:
       - export/*.ipa
     publishing:
       app_store_connect:
-        apple_id: 6748323583
+        apple_id: gabrielburke98@icloud.com
         api_key_id: XZ43MWATT6
         issuer_id: 1e83a099-f2bb-41d5-8474-f2552ab43f69
         api_private_key: |
