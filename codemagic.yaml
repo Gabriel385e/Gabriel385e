@@ -7,18 +7,18 @@ workflows:
       unity: 2022.3.10f1
       groups:
         - Secure
-      vars:
-        UNITY_LICENSE_PATH: "$HOME/.local/share/unity3d/Unity/Unity_lic.ulf"
-
     scripts:
-      - name: Decode Unity license
+      - name: Activate Unity license
         script: |
-          mkdir -p "$(dirname $UNITY_LICENSE_PATH)"
-          echo "$UNITY_LICENSE" | base64 --decode > "$UNITY_LICENSE_PATH"
+          echo "Activating Unity license..."
+          echo "$CM_SECURE_UNITY_LICENSE" > unity_lic.ulf
+          /Applications/Unity/Hub/Editor/2022.3.10f1/Unity.app/Contents/MacOS/Unity \
+            -batchmode -nographics -quit \
+            -manualLicenseFile unity_lic.ulf
 
       - name: Build Unity iOS project
         script: |
-          unity-editor \
+          /Applications/Unity/Hub/Editor/2022.3.10f1/Unity.app/Contents/MacOS/Unity \
             -batchmode -nographics -quit \
             -projectPath . \
             -executeMethod BuildScript.BuildiOS
