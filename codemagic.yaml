@@ -32,10 +32,4 @@ workflows:
         apple_id: gabrielburke98@icloud.com
         api_key_id: XZ43MWATT6
         issuer_id: 1e83a099-f2bb-41d5-8474-f2552ab43f69
-        api_private_key: |
-          -----BEGIN PRIVATE KEY-----
-          MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgudyvhigCtMUPGL70
-          83AudjBFtiMlndkVlsAypqxcAIegCgYIKoZIzj0DAQehRANCAARyZoMzhEt1g+cv
-          n3jachoVoYQsZ79Sb3bnnW/pC4LHYPOe6/YaPdObbIAbXscpNUX1ZjxHI/bBRPTL
-          c7OpCxwk
-          -----END PRIVATE KEY-----
+        api_private_key: -----BEGIN PRIVATE KEY-----MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgudyvhigCtMUPGL7083AudjBFtiMlndkVlsAypqxcAIegCgYIKoZIzj0DAQehRANCAARyZoMzhEt1g+cvn3jachoVoYQsZ79Sb3bnnW/pC4LHYPOe6/YaPdObbIAbXscpNUX1ZjxHI/bBRPTLc7OpCxwk-----END PRIVATE KEY-----
