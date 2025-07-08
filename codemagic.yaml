@@ -8,7 +8,7 @@ workflows:
       groups:
         - Secure
     scripts:
-      - name: Debug: Show Unity paths
+      - name: "Debug: Show Unity paths"
         script: |
           echo "Checking installed Unity editors..."
           find / -name Unity.app 2>/dev/null | grep -i 2022 || true
