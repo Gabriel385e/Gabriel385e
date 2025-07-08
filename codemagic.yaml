@@ -29,7 +29,7 @@ workflows:
       - export/*.ipa
     publishing:
       app_store_connect:
-        apple_id: $APP_STORE_ID
-        api_key_id: $APP_STORE_API_KEY_ID
-        issuer_id: $APP_STORE_ISSUER_ID
+        apple_id: 6748323583
+        api_key_id: XZ43MWATT6
+        issuer_id: 1e83a099-f2bb-41d5-8474-f2552ab43f69
         api_private_key: $APP_STORE_PRIVATE_KEY
