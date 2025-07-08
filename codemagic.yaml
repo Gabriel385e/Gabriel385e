@@ -4,19 +4,13 @@ workflows:
     max_build_duration: 60
     environment:
       xcode: latest
+      unity: 2022.3.6f1
       groups:
         - Secure
-      vars:
-        UNITY_VERSION: 2022.3.60f1
-        UNITY_HOME: /Applications/Unity/Hub/Editor/$UNITY_VERSION/Unity.app
     scripts:
-      - name: Install Unity version
-        script: |
-          yes Y | /Applications/Unity\ Hub.app/Contents/MacOS/Unity\ Hub -- --headless install --version $UNITY_VERSION -a mac-mono
-
       - name: Build Unity iOS project
         script: |
-          $UNITY_HOME/Contents/MacOS/Unity \
+          unity-editor \
             -batchmode -nographics -quit \
             -projectPath . \
             -executeMethod BuildScript.BuildiOS
