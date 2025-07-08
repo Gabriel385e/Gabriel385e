@@ -8,12 +8,18 @@ workflows:
       groups:
         - Secure
     scripts:
+      - name: Debug: Show Unity paths
+        script: |
+          echo "Checking installed Unity editors..."
+          find / -name Unity.app 2>/dev/null | grep -i 2022 || true
+
       - name: Build Unity iOS project
         script: |
           unity-editor \
             -batchmode -nographics -quit \
             -projectPath . \
             -executeMethod BuildScript.BuildiOS
+
       - name: Build IPA with Xcode
         script: |
           cd ios_build
