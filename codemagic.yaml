@@ -9,11 +9,12 @@ workflows:
         - Secure
       vars:
         UNITY_LICENSE_PATH: "$HOME/.local/share/unity3d/Unity/Unity_lic.ulf"
+
     scripts:
-      - name: Decode and apply Unity license
+      - name: Decode Unity license
         script: |
           mkdir -p "$(dirname $UNITY_LICENSE_PATH)"
-          echo "$UNITY_LICENSE" | base64 --decode > $UNITY_LICENSE_PATH
+          echo "$UNITY_LICENSE" | base64 --decode > "$UNITY_LICENSE_PATH"
 
       - name: Build Unity iOS project
         script: |
