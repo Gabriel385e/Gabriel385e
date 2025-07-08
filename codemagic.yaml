@@ -4,24 +4,16 @@ workflows:
     max_build_duration: 60
     environment:
       xcode: latest
+      unity: 2022.3.10f1
       groups:
         - Secure
-      vars:
-        UNITY_VERSION: 2022.3.22f1
-
     scripts:
-      - name: Install Unity via version-manager
-        script: |
-          curl -s https://get.unity-version-manager.com | bash && \
-          uvm install $UNITY_VERSION
-
       - name: Build Unity iOS project
         script: |
-          uvm exec $UNITY_VERSION -- unity-editor \
+          unity-editor \
             -batchmode -nographics -quit \
             -projectPath . \
             -executeMethod BuildScript.BuildiOS
-
       - name: Build IPA with Xcode
         script: |
           cd ios_build
@@ -34,10 +26,8 @@ workflows:
                      -archivePath $CM_BUILD_DIR/build.xcarchive \
                      -exportOptionsPlist $CM_EXPORT_OPTIONS_PLIST \
                      -exportPath $CM_BUILD_DIR/export
-
     artifacts:
       - export/*.ipa
-
     publishing:
       app_store_connect:
         apple_id: $APP_STORE_ID
